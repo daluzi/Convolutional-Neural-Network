@@ -8,6 +8,7 @@ from __future__ import print_function
 
 import numpy as np
 import warnings
+import matplotlib.pyplot as plt
 
 from keras.layers import Input
 from keras import layers
@@ -285,3 +286,10 @@ if __name__ == '__main__':
 
     preds = model.predict(x)
     print('Predicted:', decode_predictions(preds))
+    print(len(preds[0]))
+    x = np.arange(0, len(preds[0]))
+    plt.plot(x, preds[0], label="Probes")
+    plt.legend(loc="best")
+    plt.xlabel("linear probe at layer k")
+    plt.ylabel("prediction")
+    plt.show()
