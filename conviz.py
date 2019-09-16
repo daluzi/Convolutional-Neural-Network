@@ -214,7 +214,7 @@ x_reshaped = tf.reshape(x, shape=[-1, 28, 28, 1])
 
 # First convolutional layer
 predictions = conv2d(x_reshaped, filter_size=5, filter_num=32)
-
+print("firs conv:",predictions)
 # First max-pooling layer
 predictions = maxpool(predictions, 2, 2)
 
