@@ -1,7 +1,6 @@
 import tensorflow as tf
 import numpy as np
 import matplotlib.pyplot as plt
-import mnist_convotional
 
 NUM_SAMP = 1000
 training_size = 900

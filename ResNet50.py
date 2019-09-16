@@ -286,10 +286,10 @@ if __name__ == '__main__':
 
     preds = model.predict(x)
     print('Predicted:', decode_predictions(preds))
-    print(len(preds[0]))
+    print(decode_predictions(preds)[0])
     x = np.arange(0, len(preds[0]))
     plt.plot(x, preds[0], label="Probes")
     plt.legend(loc="best")
-    plt.xlabel("linear probe at layer k")
+    plt.xlabel("x")
     plt.ylabel("prediction")
     plt.show()
