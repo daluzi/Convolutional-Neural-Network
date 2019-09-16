@@ -232,7 +232,7 @@ predictions = fc(predictions, 1024, keep_prob)
 predictions = fc(predictions, n_classes, keep_prob, act=None)
 
 # Define loss operation
-cost = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(predictions, y))
+cost = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=predictions, labels=y))
 
 # Define optimizer
 optimizer = tf.train.AdamOptimizer(learning_rate=learning_rate).minimize(cost)

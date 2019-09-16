@@ -192,6 +192,7 @@ def main(_):
                         conv1_weights,
                         strides=[1, 1, 1, 1],
                         padding='SAME')
+    y1 = tf.nn.softmax(tf.matmul(conv1_weights, data) + conv1_biases)
     # Bias and rectified linear non-linearity.
     relu = tf.nn.relu(tf.nn.bias_add(conv, conv1_biases))
     # Max pooling. The kernel size spec {ksize} also follows the layout of
